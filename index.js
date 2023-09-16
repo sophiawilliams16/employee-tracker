@@ -20,18 +20,18 @@ const db = mysql.createConnection(
     console.log(`Connected to the employees_db database.`)
 );
 
-function removeRole() {
-    db.findAllRoles()
-        .then(([rows]) => {
-            let employees = roles;
-            console.table(employees);
-        })
-        .then(() => loadMainPrompts());
-}
+// function removeRole() {
+//     db.findAllRoles()
+//         .then(([rows]) => {
+//             let employees = roles;
+//             console.table(employees);
+//         })
+//         .then(() => loadMainPrompts());
+// }
 
 // get all departments
 function getAllDepartments() {
-    let query = `SELECT id, department_name FROM department`;
+    let query = `SELECT department_name FROM department`;
     db.query(query, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
